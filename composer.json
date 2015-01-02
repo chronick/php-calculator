@@ -1,0 +1,24 @@
+{
+    "name": "headcanon/quickencalc",
+    "description": "A basic web-based calculator",
+    "require": {
+        "slim/slim": "~2.5",
+        "slim/views": "0.1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nick Donohue",
+            "email": "ndonohue@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "scripts": {
+      "run": "script/dev-server.sh",
+      "post-install-cmd": "bower install",
+      "post-update-cmd": "bower update"
+    }
+}
