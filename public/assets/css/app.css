@@ -16,6 +16,14 @@ input {
     width: 100%;
 }
 
+header {
+    padding: 5px;
+}
+
+h1 {
+    font-size: 1.4em;
+}
+
 /* very basic grid system */
 .row {
     width: 100%;

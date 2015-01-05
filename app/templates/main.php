@@ -3,11 +3,16 @@
 <html>
   <head>
     <title>Calculator</title>
+    <link rel="stylesheet" href="/assets/vendor/normalize.css/normalize.css">
     <link rel="stylesheet" href="/assets/css/app.css">
   </head>
   <body>
-
     <div class="container">
+      <header>
+        <h1>Awesome Calculator</h1>
+        <p><em>by: Nick Donohue (<a href="mailto:ndonohue@gmail.com">ndonohue@gmail.com</a>)</em></p>
+        <hr/>
+      </header>
       <div class="row">
         <input type="text" id="expr"/>
       </div>
