@@ -45,11 +45,38 @@ class CalculatorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('1.1875', $result);
     }
 
-    public function testCanHandleNegativeNumbers()
+    public function testCanEvaluateExpressionsWithNegativeNumbers()
     {
         $result = $this->calculator->evaluate('23 - -19');
 
         $this->assertEquals('42', $result);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid expression.
+     */
+    public function testExceptionOnInvalidOperators() {
+
+        $this->calculator->evaluate('23 % 5');
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid expression.
+     */
+    public function testExceptionOnMultipleOperators() {
+
+        $this->calculator->evaluate('23 + 5 - 3');
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid expression.
+     */
+    public function testExceptionOnNonNumericExpression()
+    {
+        $this->calculator->evaluate("2 + x");
     }
 
     protected function setUp()
