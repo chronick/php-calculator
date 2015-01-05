@@ -1,0 +1,45 @@
+body {
+    background: #cdcdcd;
+}
+
+input, button {
+    font-size: 20px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+input {
+    width: 100%;
+}
+
+/* very basic grid system */
+.row {
+    width: 100%;
+    clear: both;
+    padding: 5px;
+}
+
+.row:after {
+    content: ' ';
+    clear: both;
+}
+
+.row > * {
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.quarter-width {
+    width: 25%;
+}
+
