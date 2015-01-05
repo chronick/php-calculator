@@ -18,6 +18,7 @@
     "minimum-stability": "stable",
     "scripts": {
       "run": "script/dev-server.sh",
+      "test": "phpunit test",
       "post-install-cmd": "bower install",
       "post-update-cmd": "bower update"
     }
