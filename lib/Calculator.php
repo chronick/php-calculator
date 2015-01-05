@@ -20,7 +20,7 @@ class Calculator
         $_number = '(?>-)?[[:digit:]]+(?>\.[[:digit:]]+)?';
         $_ws = '[[:blank:]]*';
         $_binary_operator = '\+|\-|\/|\*';
-        $_binary_expr = "/($_number)$_ws($_binary_operator)$_ws($_number)/";
+        $_binary_expr = "/^$_ws($_number)$_ws($_binary_operator)$_ws($_number)$_ws$/";
 
         if (preg_match($_binary_expr, $expr, $match)) {
 
@@ -28,7 +28,7 @@ class Calculator
             return "$result";
         }
 
-        throw new \Exception("Invalid expression.");
+        throw new \InvalidArgumentException("Invalid expression.");
     }
 
     /**
@@ -54,7 +54,7 @@ class Calculator
             case '/' :
                 return $firstFloat / $secondFloat;
             default:
-                throw new \Exception("Invalid character for binary operator (accepts +, -, *, /)");
+                throw new \InvalidArgumentException("Invalid character for binary operator (accepts +, -, *, /)");
         }
     }
 }
